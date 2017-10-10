@@ -5,15 +5,27 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.moments_of_life.android"
-        minSdkVersion 21
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            //显示log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "int", "ENVIRONMENT_VERSION_CONFIG", "0"//给开发人员的开发环境，修改时需要同步修改httpAPI文件
+            minifyEnabled false//是否混淆
+            shrinkResources false//是否去除无效的资源文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            //隐藏log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "int", "ENVIRONMENT_VERSION_CONFIG", "2"//发布的正式环境，修改时需要同步修改httpAPI文件(ps:临时修改指向开发环境)
+            minifyEnabled true//是否混淆
+            shrinkResources true//是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -26,5 +38,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
 }

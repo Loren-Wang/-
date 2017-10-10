@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MomentsOfLife</string>
+    <string name="app_name">生活点滴</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_data">DataActivity</string>
 </resources>
