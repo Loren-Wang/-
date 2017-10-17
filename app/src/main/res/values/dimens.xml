@@ -15,4 +15,14 @@
     <dimen name="app_text_size_13">8sp</dimen>
     <dimen name="app_action_bar_title_size">18sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="line_width_or_height">0.5dp</dimen>
+
+    <dimen name="common_dp_0.1">1dp</dimen>
+    <dimen name="common_dp_0.2">2dp</dimen>
+    <dimen name="common_dp_0.5">5dp</dimen>
+    <dimen name="common_dp_1">10dp</dimen>
+    <dimen name="common_dp_1.5">15dp</dimen>
+    <dimen name="common_dp_2">20dp</dimen>
+    <dimen name="common_dp_3">30dp</dimen>
+    <dimen name="common_dp_4">40dp</dimen>
 </resources>

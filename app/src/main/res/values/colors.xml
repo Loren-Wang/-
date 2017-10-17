@@ -15,4 +15,8 @@
     <color name="gray">#cccccc</color>
     <color name="red">#bf0001</color>
     <color name="zi_se">#70449f</color>
+
+
+    <!--app中线条提示颜色-->
+    <color name="default_line_bg">#45c7c7cc</color>
 </resources>

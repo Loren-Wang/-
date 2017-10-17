@@ -2,7 +2,149 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/common_dp_1"
+                android:paddingRight="@dimen/common_dp_1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/home_location"
+                        style="@style/home_title"
+                        />
+
+                    <EditText
+                        android:id="@+id/edtInLocation"
+                        style="@style/home_edit" />
+
+                </LinearLayout>
+                <View style="@style/line_horizontal"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/home_money"
+                        style="@style/home_title"
+                        />
+
+                    <EditText
+                        android:id="@+id/edtMoney"
+                        style="@style/home_edit" />
+
+                </LinearLayout>
+                <View style="@style/line_horizontal"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/home_name"
+                        style="@style/home_title"
+                        />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        style="@style/home_edit" />
+
+                </LinearLayout>
+                <View style="@style/line_horizontal"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/home_pay_from"
+                        style="@style/home_title"
+                        />
+
+                    <EditText
+                        android:id="@+id/edtPayFrom"
+                        style="@style/home_edit" />
+
+                </LinearLayout>
+                <View style="@style/line_horizontal"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/home_voice_result"
+                        style="@style/home_title"
+                        />
+
+                    <EditText
+                        android:id="@+id/edtVoiceResult"
+                        style="@style/home_edit" />
+
+                </LinearLayout>
+                <View style="@style/line_horizontal"></View>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btnVoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_voice_input"/>
+
+            <Button
+                android:id="@+id/btnRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_record"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/common_dp_1"
+                style="@style/home_show"
+                android:text="@string/home_today_balance"/>
+            <TextView
+                android:layout_marginTop="@dimen/common_dp_1"
+                style="@style/home_show"
+                android:text="@string/home_week_balance"/>
+            <TextView
+                android:layout_marginTop="@dimen/common_dp_1"
+                style="@style/home_show"
+                android:text="@string/home_month"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <View
+        style="@style/line_horizontal"></View>
+
+
+    <include
+        layout="@layout/activity_main_bottom_options"></include>
+
 
 
 </LinearLayout>

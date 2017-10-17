@@ -1,8 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/common_dp_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_budget_today"
+                style="@style/home_title"
+                />
+
+            <EditText
+                android:id="@+id/edtInLocation"
+                style="@style/home_edit" />
+
+        </LinearLayout>
+        <View style="@style/line_horizontal"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_budget_week"
+                style="@style/home_title"
+                />
+
+            <EditText
+                android:id="@+id/edtMoney"
+                style="@style/home_edit" />
+
+        </LinearLayout>
+        <View style="@style/line_horizontal"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:text="@string/user_budget_month"
+                style="@style/home_title"
+                />
+
+            <EditText
+                android:id="@+id/edtName"
+                style="@style/home_edit" />
+
+        </LinearLayout>
+        <View style="@style/line_horizontal"></View>
+
+        <Button
+            android:id="@+id/btnBudgetReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reset"
+            android:onClick="budgetResetClick"/>
+
+
+    </LinearLayout>
+
+    <View
+        style="@style/line_horizontal"></View>
+
+    <include
+        layout="@layout/activity_main_bottom_options"></include>
 
 </LinearLayout>
