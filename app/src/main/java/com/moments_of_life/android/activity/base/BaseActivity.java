@@ -30,7 +30,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actiity_base);
         lnBase = (LinearLayout) findViewById(R.id.lnBase);
-
     }
 
     protected void addChildView(@LayoutRes int layoutRes){

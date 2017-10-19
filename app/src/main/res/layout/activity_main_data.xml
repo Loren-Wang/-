@@ -48,7 +48,7 @@
             style="@style/data_options"
             android:layout_below="@+id/btnFilterStartDate"
             android:layout_marginTop="@dimen/common_dp_1"
-            android:text="@string/data_search" />
+            android:text="@string/data_search_today" />
 
         <Button
             android:id="@+id/btnSeWeek"
@@ -56,15 +56,15 @@
             android:layout_alignBottom="@id/btnSeToday"
             android:layout_marginLeft="@dimen/common_dp_1.5"
             android:layout_toRightOf="@id/btnSeToday"
-            android:text="@string/data_search" />
+            android:text="@string/data_search_week" />
 
         <Button
             android:id="@+id/btnSeMonth"
             style="@style/data_options"
-            android:layout_alignBottom="@id/btnSeWeek"
-            android:layout_marginLeft="@dimen/common_dp_1"
-            android:layout_toRightOf="@id/btnSeWeek"
-            android:text="@string/data_search" />
+            android:text="@string/data_search_month"
+            android:layout_above="@+id/view"
+            android:layout_toLeftOf="@+id/btnSearch"
+            android:layout_toStartOf="@+id/btnSearch" />
 
         <Button
             android:id="@+id/btnSeNotFormat"
@@ -76,7 +76,8 @@
         <View
             android:layout_marginTop="@dimen/common_dp_0.5"
             android:layout_below="@id/btnSeToday"
-            style="@style/line_horizontal"/>
+            style="@style/line_horizontal"
+            android:id="@+id/view" />
 
         <android.support.v7.widget.RecyclerView
             android:layout_below="@id/btnSeToday"
