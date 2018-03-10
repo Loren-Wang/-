@@ -27,6 +27,14 @@
     <uses-permission android:name="android.permission.CAMERA" />
     //使用步行AR导航，配置Camera权限
 
+    <!-- begin: baidu speech sdk  权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- end: baidu speech sdk  权限 -->
+
     <application
         android:name=".MomentOfLifeApplication"
         android:allowBackup="true"
@@ -39,6 +47,17 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="xnnI1VvF9OfCKqDDj7EaLq0VPind52tN" />
+
+
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="10907552" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="mMFjfvbNF87o7dGZm32lhlBR" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="8kqwSYi92klPGG9lxqDAl9KSx2ONiXYQ" />
 
 
         <!--适配三星s8以及s8+-->
