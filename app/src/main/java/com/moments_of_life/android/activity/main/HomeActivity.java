@@ -135,6 +135,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
          * @param str
          */
         private void paramsInput(String str){
+            if(str.indexOf("识别错误, 错误码：") == 0){
+                return;
+            }
             edtName.setText(str);
             //格式化金额
             Pattern pattern = Pattern.compile(CheckUtils.EXP_IS_PAYD);
