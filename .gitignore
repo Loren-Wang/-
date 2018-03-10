@@ -9,6 +9,9 @@
 # built application files
 *.apk
 *.ap_
+/app/appTest
+/app/debug
+/app/release
 
 # files for the dex VM
 *.dex
@@ -31,12 +34,10 @@ local.properties
 proguard/
 
 # Intellij project files
-*.iml
 *.ipr
 *.iws
 .idea/
 build/
 *.bat
 .gradle/
-app/libs/
-app/src/main/res/drawable/
+/.idea/

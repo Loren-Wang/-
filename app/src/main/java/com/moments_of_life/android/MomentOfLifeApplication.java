@@ -2,6 +2,8 @@ package com.moments_of_life.android;
 
 import android.app.Application;
 
+import com.baidu.mapapi.SDKInitializer;
+
 /**
  * Created by LorenWang on 2017/10/10.
  * 创建时间：2017/10/10 22:06
@@ -18,5 +20,8 @@ public class MomentOfLifeApplication extends Application {
     public void onCreate() {
         super.onCreate();
         AppCommon.APP_CONTEXT = getApplicationContext();
+
+        //初始化百度地图
+        SDKInitializer.initialize(getApplicationContext());
     }
 }
