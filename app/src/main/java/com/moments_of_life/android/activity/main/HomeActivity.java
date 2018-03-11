@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 import com.moments_of_life.android.R;
 import com.moments_of_life.android.activity.base.BaseActivity;
+import com.moments_of_life.android.database.DbAsr;
+import com.moments_of_life.android.dto.AsrResultDto;
 import com.moments_of_life.android.dto.PhoneLocationCallBackDto;
 import com.moments_of_life.android.interfaces_abstract.location.PhoneLocationCallBackListener;
 import com.moments_of_life.android.plugins.baiduVoice.IRecogListener;
@@ -43,6 +45,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private EditText edtVoiceResult;//语音识别结果
     private EditText edtName;//名称
     private EditText edtMoney;//金额
+    private Button btnRecord;//录入
 
 
 
@@ -53,6 +56,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     //定位
     private PhoneLocationCallBackDto phoneLocationCallBackDto;//定位回调
+    private String locationDetail = "";//定位详细地址，通过语音识别
     private PhoneLocationCallBackListener phoneLocationCallBackListener = new PhoneLocationCallBackListener() {
         @Override
         public void locationFinishCallBack(PhoneLocationCallBackDto callBackDto) {
@@ -60,6 +64,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
             if(phoneLocationCallBackDto.address != null){
                 edtInLocation.setText(phoneLocationCallBackDto.address);
             }
+            edtInLocation.append(locationDetail);
         }
     };
 
@@ -140,11 +145,18 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
             }
             edtName.setText(str);
             //格式化金额
-            Pattern pattern = Pattern.compile(CheckUtils.EXP_IS_PAYD);
-            Matcher matcher = pattern.matcher(str);
-            if(matcher.find()){
-                edtMoney.setText(ParamsAndJudgeUtils.chn2digit(matcher.group().replace(matcher.group(1),"").replace("块钱","")).toString());
+            Pattern patternMoney = Pattern.compile(CheckUtils.EXP_IS_PAYD);
+            Matcher matcherMoney = patternMoney.matcher(str);
+            if(matcherMoney.find()){
+                edtMoney.setText(ParamsAndJudgeUtils.chn2digit(matcherMoney.group().replace(matcherMoney.group(1),"").replace("块钱","")).toString());
             }
+            //详细地址
+            Pattern patternLocation = Pattern.compile(CheckUtils.EXP_IS_LOCATION_DETAIL);
+            Matcher matcherLocation = patternLocation.matcher(str);
+            if(matcherLocation.find()){
+                locationDetail = "," + matcherLocation.group();
+            }
+            edtInLocation.append(locationDetail);
         }
     };
 
@@ -158,8 +170,10 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         edtVoiceResult = findViewById(R.id.edtVoiceResult);
         edtName = findViewById(R.id.edtName);
         edtMoney = findViewById(R.id.edtMoney);
+        btnRecord = findViewById(R.id.btnRecord);
 
         btnVoice.setOnClickListener(this);
+        btnRecord.setOnClickListener(this);
 
 
 
@@ -228,6 +242,16 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                     myRecognizer.stop();
                 }else {
                     permisstionRequest(audioPermisstionStr,PERMISSTION_REQUEST_CODE_FOR_AUDIO);
+                }
+                break;
+            case R.id.btnRecord://录入
+                if(edtVoiceResult.getText() != null && !edtVoiceResult.getText().toString().isEmpty()) {
+                    AsrResultDto asrResultDto = new AsrResultDto();
+                    asrResultDto.setAsrTime(ParamsAndJudgeUtils.getMillisecond());
+                    asrResultDto.setAsrState(false);
+                    asrResultDto.setAsrContent(edtVoiceResult.getText().toString());
+                    asrResultDto.setUserId(0);
+                    DbAsr.getInstance().insertAstResult(asrResultDto);
                 }
                 break;
             default:

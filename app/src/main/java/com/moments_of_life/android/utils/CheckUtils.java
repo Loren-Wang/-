@@ -38,6 +38,7 @@ public class CheckUtils {
     public static final String LOGIN_OR_REG_PWD = "[0-9]{4}";//登录或者注册的时候密码或验证码正则
     public static final String CHAT_MSG_DEFAULT_EMOJI = "[[\u4e00-\u9fa5]]";//聊天中表情文件名正则（不包含文件路径）
     public static final String EXP_IS_PAYD = "(花了|交了|转了|取了|存了|发了|欢乐).*块钱";
+    public static final String EXP_IS_LOCATION_DETAIL = ".*在.*(花了|交了|转了|取了|存了|发了|欢乐)";
 
 
 

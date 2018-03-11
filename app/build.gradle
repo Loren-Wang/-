@@ -17,10 +17,18 @@ android {
         }
     }
     buildTypes {
+        release {
+            //隐藏log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "int", "ENVIRONMENT_VERSION_CONFIG", "0"
+            minifyEnabled true//是否混淆
+            shrinkResources true//是否去除无效的资源文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         debug {
             //显示log
             buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "int", "ENVIRONMENT_VERSION_CONFIG", "0"//给开发人员的开发环境，修改时需要同步修改httpAPI文件
+            buildConfigField "int", "ENVIRONMENT_VERSION_CONFIG", "1"//给开发人员的开发环境，修改时需要同步修改httpAPI文件
             minifyEnabled false//是否混淆
             shrinkResources false//是否去除无效的资源文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
