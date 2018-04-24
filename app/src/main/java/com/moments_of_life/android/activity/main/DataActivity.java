@@ -14,6 +14,12 @@ public class DataActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         addChildView(R.layout.activity_main_data);
     }
+
+    @Override
+    protected void initChildView() {
+
+    }
+
     /**
      * 导航栏点击事件
      * @param view

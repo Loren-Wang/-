@@ -3,7 +3,7 @@ package com.moments_of_life.android.activity.start;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.moments_of_life.android.activity.main.HomeActivity;
+import com.moments_of_life.android.activity.MainActivity;
 import com.moments_of_life.android.utils.ActivityUtils;
 
 public class SplashActivity extends Activity {
@@ -20,7 +20,7 @@ public class SplashActivity extends Activity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
-                    ActivityUtils.jump(SplashActivity.this, HomeActivity.class);
+                    ActivityUtils.jump(SplashActivity.this, MainActivity.class);
                     finish();
                 }
             }

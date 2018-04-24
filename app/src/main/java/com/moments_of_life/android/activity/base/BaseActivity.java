@@ -29,7 +29,7 @@ import java.util.List;
  * 备注：
  */
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     private LinearLayout lnBase;
     private final String TAG = getClass().getName() + hashCode();
@@ -39,6 +39,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actiity_base);
         lnBase = (LinearLayout) findViewById(R.id.lnBase);
+        initChildView();
     }
 
     protected void addChildView(@LayoutRes int layoutRes){
@@ -117,5 +118,9 @@ public class BaseActivity extends AppCompatActivity {
 
         return;
     }
+
+
+    /*******************************************子类实现的抽象方法************************************/
+    protected abstract void initChildView();
 
 }

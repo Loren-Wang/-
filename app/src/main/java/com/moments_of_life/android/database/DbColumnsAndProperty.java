@@ -23,11 +23,11 @@ public class DbColumnsAndProperty {
 
     public String TB_EXPENSE = "expense";//消费记录
     public String TB_EXPENSE_LIMINT = "expense_limit";//消费记录限制
-    public String TB_ASR = "asr";//语音识别
 
     //通用
     public final String _ID = "_id";
     public final String USER_ID = "user_id";//使用者id
+    public final String TIME = "time";//时间
 
     //已解析消费列表
     public String EXPENSE_ID = "expense_id";//消费id
@@ -39,14 +39,7 @@ public class DbColumnsAndProperty {
     public String EXPENSE_CONTENT = "expense_content";//操作内容
     public String EXPENSE_FROM = "expense_from";//消费来源
     public String EXPENSE_TIME = "expense_time";//操作时间
-    public String ASR_ID = "asr_id";//消费语音识别结果id
 
-
-    //语音结果识别
-//    public String ASR_ID = "asr_id";//消费语音识别结果id
-    public String ASR_STATE = "asr_state";//语音识别状态，布尔型
-    public String ASR_CONTENT = "asr_content";//语音识别内容
-    public String ASR_TIME = "asr_time";//语音识别时间
 
     //消费限制记录
     public String EXPENSE_LIMIT_RECORD_ID = "record_id";//消费限制记录id

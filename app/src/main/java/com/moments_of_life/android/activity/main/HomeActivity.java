@@ -209,6 +209,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    @Override
+    protected void initChildView() {
+
+    }
+
     /**
      * 导航栏点击事件
      * @param view
